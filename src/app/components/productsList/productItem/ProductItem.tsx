@@ -46,7 +46,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
       <div className={styles.image}>
         <Image src={media.src} alt={media.alt} fill />
       </div>
-      <div className={`${styles.columnContainer} col-span-2`}>
+      <div className={`${styles.columnContainer} ${styles.titleContainer}`}>
         <p>{product.title}</p>
         <p className={styles.description}>
           {product.description ? getShortDescription(product.description) : 'No description'}
@@ -57,7 +57,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
         <span>${product.price.toFixed(0)}</span>
         <span className={styles.stock}>{product.stock}u.</span>
       </div>
-      <div className={`${styles.columnContainer} ${styles.alignEnd}`}>
+      <div className={`${styles.columnContainer} ${styles.actionButtonsContainer}`}>
         {actionButtons.map(button => (
           <div className={styles.actionButton}>
             {button.icon}
