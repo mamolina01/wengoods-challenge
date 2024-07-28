@@ -1,0 +1,7 @@
+.container {
+  @apply w-full flex justify-center p-3 bg-green-300;
+
+  .title {
+    @apply text-2xl font-medium;
+  }
+}
