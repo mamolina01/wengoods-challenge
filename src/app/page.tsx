@@ -1,5 +1,5 @@
 import { products } from '@/constants/products'
-import { ProductsManager } from './components/productsManager/ProductsManager'
+import { ProductsManager } from '../components/productsManager/ProductsManager'
 
 export default function Home() {
   const {
