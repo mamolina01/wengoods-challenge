@@ -1,6 +1,5 @@
-import Image from 'next/image'
-import { ProductsList } from './components/productsList/ProductsList'
 import { products } from '@/constants/products'
+import { ProductsManager } from './components/productsManager/ProductsManager'
 
 export default function Home() {
   const {
@@ -8,8 +7,9 @@ export default function Home() {
   } = products
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <ProductsList productsList={productsList} />
+    <main className="flex min-h-screen flex-col gap-4 items-center p-4 md:p-5">
+      <h4 className="text-lg">Administrator Panel</h4>
+      <ProductsManager productsList={productsList} />
     </main>
   )
 }
