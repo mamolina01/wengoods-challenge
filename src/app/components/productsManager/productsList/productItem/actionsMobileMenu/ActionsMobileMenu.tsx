@@ -37,7 +37,7 @@ export const ActionsMobileMenu = () => {
       {showMenu && (
         <div className={styles.menuContainer} ref={menuRef}>
           {actionButtons.map(button => (
-            <button className={styles.option} onClick={closeMenu}>
+            <button className={styles.option} onClick={closeMenu} key={button.text}>
               {button.icon}
               <span className={styles.text}>{button.text}</span>
             </button>
