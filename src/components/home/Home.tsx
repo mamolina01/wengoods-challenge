@@ -1,5 +1,5 @@
 import { getProducts } from '@/actions/getProducts'
-import { ProductsManager } from '../productsManager/ProductsManager'
+import { ProductsManager } from './productsManager/ProductsManager'
 
 export const Home = async () => {
   const {
