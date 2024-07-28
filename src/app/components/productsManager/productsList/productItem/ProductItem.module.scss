@@ -1,5 +1,5 @@
 .container {
-  @apply w-full px-4 py-2 bg-white border border-zinc-500 rounded grid grid-rows-[auto_auto] grid-cols-3 lg:gap-y-0 lg:grid-rows-1 lg:grid-cols-[50px_2fr_1fr_1fr_1fr] lg:gap-x-8 items-center;
+  @apply w-full px-4 py-2 bg-white border border-zinc-500 rounded grid grid-rows-[auto_auto] grid-cols-3 lg:gap-y-0 lg:grid-rows-1 lg:grid-cols-[50px_2fr_1fr_1fr_1fr] lg:gap-x-8 items-center relative;
 
   .image {
     @apply w-20 h-20 lg:w-16 lg:h-16 rounded overflow-hidden mx-auto relative row-span-4;
@@ -10,32 +10,36 @@
 
     &.titleContainer {
       @apply col-span-2 mb-2 lg:mb-0;
+
+      .description {
+        @apply text-xs text-neutral-600;
+      }
+    }
+
+    &.detailsContainer {
+      @apply col-span-2 lg:col-span-1 grid grid-cols-2 lg:grid-cols-1;
+
+      .views {
+        @apply text-xs border-l-2 pl-1 border-green-700 text-neutral-600 col-span-2 lg:col-span-1;
+      }
+
+      .stock {
+        @apply text-sm;
+      }
     }
 
     &.actionButtonsContainer {
       @apply items-end hidden lg:flex;
-    }
 
-    .description {
-      @apply text-xs text-neutral-600;
-    }
+      .actionButton {
+        @apply flex items-center gap-2 hover:text-green-700 cursor-pointer;
 
-    .views {
-      @apply text-xs border-l-2 pl-1 border-green-700 text-neutral-600;
-    }
-
-    .stock {
-      @apply text-sm;
-    }
-
-    .actionButton {
-      @apply flex items-center gap-2 hover:text-green-700;
-
-      .icon {
-        @apply w-4 h-4;
-      }
-      .text {
-        @apply text-sm cursor-pointer;
+        .icon {
+          @apply w-4 h-4;
+        }
+        .text {
+          @apply text-sm;
+        }
       }
     }
   }
