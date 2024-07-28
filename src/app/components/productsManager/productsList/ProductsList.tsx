@@ -1,13 +1,19 @@
 import { Row } from '@/types/products'
 import styles from './ProductsList.module.scss'
 import { ProductItem } from './productItem/ProductItem'
+import { NoResults } from './noResults/NoResults'
 
-export const ProductsList = ({ productsList }: { productsList: Row[] }) => {
+interface Props {
+  productsList: Row[]
+  filter: string
+  clearFilter: () => void
+}
+
+export const ProductsList = ({ productsList, filter, clearFilter }: Props) => {
   return (
     <div className={styles.container}>
       {productsList.length === 0 ? (
-        // <TextContainer text="No results" />
-        <p>No results</p>
+        <NoResults filter={filter} clearFilter={clearFilter} />
       ) : (
         productsList.map(product => <ProductItem key={product.id} product={product} />)
       )}

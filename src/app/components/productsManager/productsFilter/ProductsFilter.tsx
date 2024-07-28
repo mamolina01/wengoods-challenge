@@ -1,23 +1,13 @@
-import { Row } from '@/types/products'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import styles from './ProductsFilter.module.scss'
 
 interface Props {
-  productsList: Row[]
-  setProductsList: (product: Row[]) => void
+  productName: string
+  filterByName: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const ProductsFilter = ({ productsList, setProductsList }: Props) => {
-  const [productName, setProductName] = useState<string>('')
-
-  const filterByName = (e: ChangeEvent<HTMLInputElement>) => {
-    const name = e.target.value
-    setProductName(name)
-    const filteredProducts = productsList.filter(product => product.title.toLowerCase().includes(name.toLowerCase()))
-    setProductsList(filteredProducts)
-  }
-
+export const ProductsFilter = ({ productName, filterByName }: Props) => {
   return (
     <div className={styles.container}>
       <div className={styles.inputContainer}>
