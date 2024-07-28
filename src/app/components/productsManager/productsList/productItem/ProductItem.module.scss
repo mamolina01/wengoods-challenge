@@ -29,7 +29,7 @@
     }
 
     .actionButton {
-      @apply flex items-center gap-1 hover:text-green-700;
+      @apply flex items-center gap-2 hover:text-green-700;
 
       .icon {
         @apply w-4 h-4;

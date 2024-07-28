@@ -1,0 +1,19 @@
+.container {
+  @apply w-full flex border border-neutral-400 overflow-hidden rounded text-sm;
+
+  .inputContainer {
+    @apply flex-1 p-2 bg-white;
+
+    .input {
+      @apply w-full outline-none;
+    }
+  }
+
+  .button {
+    @apply p-2 border-l border-neutral-400 flex gap-1 items-center text-green-700 font-semibold;
+
+    .icon {
+      @apply text-lg;
+    }
+  }
+}

@@ -60,8 +60,8 @@ export const ProductItem = ({ product }: { product: Row }) => {
       <div className={`${styles.columnContainer} ${styles.actionButtonsContainer}`}>
         {actionButtons.map(button => (
           <div className={styles.actionButton}>
-            {button.icon}
             <span className={styles.text}>{button.text}</span>
+            {button.icon}
           </div>
         ))}
       </div>
