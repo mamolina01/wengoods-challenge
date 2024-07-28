@@ -1,0 +1,26 @@
+.container {
+  @apply w-full flex flex-col items-center justify-center gap-5 mt-16;
+
+  .spinnerContainer {
+    @apply h-full flex flex-col justify-center items-center;
+
+    .spinner {
+      @apply h-10 w-10 border-[6px] border-green-900 border-l-transparent rounded-full;
+      animation: rotate 0.9s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .text {
+    @apply text-xl;
+  }
+}
