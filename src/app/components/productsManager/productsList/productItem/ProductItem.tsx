@@ -5,11 +5,8 @@ import Image from 'next/image'
 import notFound from '@/public/not-found.png'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa'
 import { MdOutlineShare } from 'react-icons/md'
-
-interface actionButtonsProps {
-  icon: JSX.Element
-  text: string
-}
+import { actionButtonsProps } from '@/types/actionButtons'
+import { ActionsMobileMenu } from './actionsMobileMenu/ActionsMobileMenu'
 
 export const ProductItem = ({ product }: { product: Row }) => {
   const media = {
@@ -43,6 +40,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
 
   return (
     <div className={`${styles.container}`}>
+      <ActionsMobileMenu />
       <div className={styles.image}>
         <Image src={media.src} alt={media.alt} fill />
       </div>
@@ -52,7 +50,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
           {product.description ? getShortDescription(product.description) : 'No description'}
         </p>
       </div>
-      <div className={`${styles.columnContainer} ${styles.center}`}>
+      <div className={`${styles.columnContainer} ${styles.detailsContainer}`}>
         <span className={styles.views}>{product.views} views</span>
         <span>${product.price.toFixed(0)}</span>
         <span className={styles.stock}>{product.stock}u.</span>
