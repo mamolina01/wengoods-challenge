@@ -3,17 +3,20 @@ import { Row } from '@/types/products'
 import styles from './ProductItem.module.scss'
 import Image from 'next/image'
 import notFound from '@/public/not-found.png'
+import noAvailable from '@/public/noAvailable.png'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa'
 import { MdOutlineShare } from 'react-icons/md'
 import { actionButtonsProps } from '@/types/actionButtons'
 import { ActionsMobileMenu } from './actionsMobileMenu/ActionsMobileMenu'
 import { getShortText } from '@/utils/getShortText'
+import { useState } from 'react'
 
 export const ProductItem = ({ product }: { product: Row }) => {
   const media = {
     src: product.media.images[0]?.url ? product.media.images[0].url : notFound,
     alt: product.media.images[0]?.key ? product.media.images[0].key : `${product.title}-notFound`
   }
+  const [imgSrc, setImgSrc] = useState(media.src)
 
   const actionButtons: actionButtonsProps[] = [
     {
@@ -36,7 +39,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
     <div className={`${styles.container}`}>
       <ActionsMobileMenu />
       <div className={styles.image}>
-        <Image src={media.src} alt={media.alt} fill />
+        <Image src={imgSrc} alt={media.alt} onError={() => setImgSrc(noAvailable)} fill />
       </div>
       <div className={`${styles.columnContainer} ${styles.titleContainer}`}>
         <p>{product.title}</p>
