@@ -1,0 +1,38 @@
+.container {
+  @apply w-full px-4 py-2 bg-white border border-zinc-500 rounded grid grid-cols-[50px_2fr_1fr_1fr_1fr] gap-x-8 items-center;
+
+  .image {
+    @apply w-16 h-16 rounded overflow-hidden mx-auto relative;
+  }
+
+  .columnContainer {
+    @apply flex flex-col gap-1;
+
+    &.alignEnd {
+      @apply items-end;
+    }
+
+    .description {
+      @apply text-xs text-neutral-600;
+    }
+
+    .views {
+      @apply text-xs border-l-2 pl-1 border-green-700 text-neutral-600;
+    }
+
+    .stock {
+      @apply text-sm;
+    }
+
+    .actionButton {
+      @apply flex items-center gap-1 hover:text-green-700;
+
+      .icon {
+        @apply w-4 h-4;
+      }
+      .text {
+        @apply text-sm cursor-pointer;
+      }
+    }
+  }
+}
