@@ -7,6 +7,7 @@ import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa'
 import { MdOutlineShare } from 'react-icons/md'
 import { actionButtonsProps } from '@/types/actionButtons'
 import { ActionsMobileMenu } from './actionsMobileMenu/ActionsMobileMenu'
+import { getShortText } from '@/utils/getShortText'
 
 export const ProductItem = ({ product }: { product: Row }) => {
   const media = {
@@ -29,13 +30,6 @@ export const ProductItem = ({ product }: { product: Row }) => {
     }
   ]
 
-  const getShortDescription = (description: string) => {
-    if (description.length > 100) {
-      return `${description.substring(0, 100).trim()}...`
-    }
-    return description
-  }
-
   if (product.hidden) return
 
   return (
@@ -47,7 +41,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
       <div className={`${styles.columnContainer} ${styles.titleContainer}`}>
         <p>{product.title}</p>
         <p className={styles.description}>
-          {product.description ? getShortDescription(product.description) : 'No description'}
+          {product.description ? getShortText(product.description, 100) : 'No description'}
         </p>
       </div>
       <div className={`${styles.columnContainer} ${styles.detailsContainer}`}>
@@ -57,7 +51,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
       </div>
       <div className={`${styles.columnContainer} ${styles.actionButtonsContainer}`}>
         {actionButtons.map(button => (
-          <div className={styles.actionButton}>
+          <div className={styles.actionButton} key={button.text}>
             <span className={styles.text}>{button.text}</span>
             {button.icon}
           </div>
