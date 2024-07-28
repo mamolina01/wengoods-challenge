@@ -12,7 +12,11 @@ export const NoResults = ({ filter, clearFilter }: Props) => {
   return (
     <div className={styles.container}>
       <Image src={noResults} alt="noResults" />
-      <p className={styles.noResults}>No results for "{getShortText(filter, 15)}"</p>
+      <p className={styles.noResults}>
+        No results for {'"'}
+        {getShortText(filter, 15)}
+        {'"'}
+      </p>
       <button className={styles.clearFilter} onClick={clearFilter}>
         Clear filter
       </button>
