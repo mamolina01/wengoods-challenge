@@ -49,7 +49,7 @@ export const ProductItem = ({ product }: { product: Row }) => {
       </div>
       <div className={`${styles.columnContainer} ${styles.detailsContainer}`}>
         <span className={styles.views}>{product.views} views</span>
-        <span>${product.price.toFixed(0)}</span>
+        <span>{product.price.toFixed(0)} points</span>
         <span className={styles.stock}>{product.stock}u.</span>
       </div>
       <div className={`${styles.columnContainer} ${styles.actionButtonsContainer}`}>
